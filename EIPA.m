@@ -21,7 +21,12 @@ for i = 1:numX
         if(i == 1 || j == 1 || i == numX || j ==numY)
            GMatrix(n,n) = 1;
         else
-            GMatrix(n,n) = -4;
+            if(i > 10 && i < 20 && j > 10 && j < 20)
+                GMatrix(n,n) = -2;
+            else
+                GMatrix(n,n) = -4;
+            end
+            
             GMatrix(nxm,n) = 1;
             GMatrix(nxp,n) = 1;
             GMatrix(n,nym) = 1;
@@ -59,5 +64,3 @@ for mapCount = 1:9
     surf(mapMatrix);
 
 end
-
-
